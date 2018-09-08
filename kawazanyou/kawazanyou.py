@@ -3,10 +3,21 @@ import argparse
 
 parser = argparse.ArgumentParser(description='kawazanyou')
 
-parser.add_argument('-i', '--initial', type=int, help='Initial value')
-parser.add_argument('-r', '--rate', type=int, help='Annual interest rate')
-parser.add_argument('-s', '--saving', type=int, help="Annual saving")
-parser.add_argument('-t', '--term', type=int, help="term")
+parser.add_argument('-i', '--initial',
+                    required=True,
+                    type=int,
+                    help='Initial value')
+parser.add_argument('-r', '--rate',
+                    required=True,
+                    type=int,
+                    help='Annual interest rate')
+parser.add_argument('-s', '--saving',
+                    required=True,
+                    type=int,
+                    help="Annual saving")
+parser.add_argument('-t', '--term',
+                    required=True,
+                    type=int, help="term")
 parser.add_argument('-d', '--debug',
                     required=False,
                     action='store_true',
