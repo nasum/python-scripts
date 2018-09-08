@@ -37,4 +37,4 @@ for var in range(0, term):
     actual += total_saving_amount
     profit = actual * (rate / 100)
     actual += profit
-    print('{},{},{},'.format(var, actual, profit))
+    print('{},{},{}'.format(var, actual, profit))
