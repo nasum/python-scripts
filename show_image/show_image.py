@@ -1,9 +1,16 @@
+#!/usr/bin/env python
+import argparse
 import sys
 import tkinter
 from PIL import Image, ImageTk
 
-argv = sys.argv
-path = argv[1]
+parser = argparse.ArgumentParser(description='show image')
+parser.add_argument('path', metavar='P', type=str, help='image path')
+args = parser.parse_args()
+
+path = args.path
+
+print(path)
 
 image = Image.open(path)
 
