@@ -31,7 +31,11 @@ term = args.term
 
 point_by_day = point_number / term
 scheduled_point = point_by_day * day
-point_to_complete_by_day = (point_number - complete_point) / (term - day)
+
+if not term == day:
+    point_to_complete_by_day = (point_number - complete_point) / (term - day)
+else:
+    point_to_complete_by_day = 0
 
 print(f'総ポイント数　　　　　：{point_number}')
 print(f'実消化ポイント数　　　：{complete_point}')
