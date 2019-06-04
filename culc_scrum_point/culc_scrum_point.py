@@ -1,4 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import argparse
 
 parser = argparse.ArgumentParser(description='culc_scrum_point')
@@ -21,19 +23,19 @@ parser.add_argument('-c', '--complete',
                     help='complete point')
 
 
-
 args = parser.parse_args()
 
-point_number = args.point
-day = args.day
-complete_point = args.complete
-term = args.term
+point_number = float(args.point)
+day = float(args.day)
+complete_point = float(args.complete)
+term = float(args.term)
 
-point_by_day = point_number / term
+point_by_day = round(point_number / term, 2)
 scheduled_point = point_by_day * day
 
 if not term == day:
-    point_to_complete_by_day = (point_number - complete_point) / (term - day)
+    point_to_complete_by_day = round(
+        (point_number - complete_point) / (term - day), 2)
 else:
     point_to_complete_by_day = 0
 
